@@ -10,7 +10,7 @@ type Episode = {
   members: string;
   published_at: string;
   thumbnail: string;
-  description: string;
+  description?: string;
   file: File;
   // TODO: Separar o Episode base do formatado!
   // Informação extra após formatação.
