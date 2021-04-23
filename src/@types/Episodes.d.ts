@@ -11,12 +11,13 @@ type Episode = {
   published_at: string;
   thumbnail: string;
   description?: string;
+  duration: number;
   file: File;
   // TODO: Separar o Episode base do formatado!
   // Informação extra após formatação.
-  publishedAt: string,
+  publishedAt: string;
   durationAsString: string;
-  url: string,
+  url: string;
 }
 
 export default Episode;

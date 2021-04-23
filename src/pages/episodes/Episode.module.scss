@@ -3,6 +3,18 @@
     padding: 3rem 2rem;
     margin: 0 auto;
 
+    height: calc(100vh - 6.5rem);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
     .thumbnailContainer {
         position: relative;
 
@@ -80,9 +92,7 @@
         color: var(--gray-800);
 
         p {
-            // margin: 1.5rem 0;
-            // TODO: Corrigir a gambiarra abaixo
-            margin: 1.5rem 0 -0.45rem;
+            margin: 1.5rem 0;
         }
     }
 }
