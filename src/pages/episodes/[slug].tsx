@@ -11,14 +11,22 @@ import {convertDurationToTimeString} from '../../utils/convertDurationToTimeStri
 import styles from './Episode.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import {useContext} from 'react';
+import PlayerContext from '../../contexts/Player.context';
+import Head from 'next/head';
 
 type EpisodeProps = {
   episode: Episode;
 }
 
 const Episodes = ({episode}: EpisodeProps) => {
+  const {play} = useContext(PlayerContext);
+
   return (
     <div className={styles.episode}>
+      <Head>
+        <title>Episódio | Podcastr</title>
+      </Head>
       <div className={styles.thumbnailContainer}>
         <Link href="/">
           <button type="button">
@@ -31,7 +39,7 @@ const Episodes = ({episode}: EpisodeProps) => {
           src={episode.thumbnail}
           objectFit='cover'
         />
-        <button type="button">
+        <button type="button" onClick={() => play(episode)}>
           <img src="/play.svg" alt="Tocar episódio" />
         </button>
       </div>
